@@ -82,5 +82,6 @@ while (novo == 'sim'){
 // FALSE && TRUE   = FALSE
 // FALSE && FALSE  = FALSE
 
+// teste
 
 console.log();

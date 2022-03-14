@@ -77,4 +77,5 @@ if (viagem.toLowerCase() == 'sim') {
     console.log('Azar seu.');
 }
 
+// teste
 console.log();

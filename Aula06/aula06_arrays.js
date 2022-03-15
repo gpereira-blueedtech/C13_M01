@@ -42,14 +42,14 @@ let filmes = [
 
 // console.log(filmes);
 
-let novofilme = prompt('Digite o nome do filme: ')
-filmes.push(novofilme);
-console.log();
+// let novofilme = prompt('Digite o nome do filme: ')
+// filmes.push(novofilme);
+// console.log();
 
-let novoano = +prompt('Digite o ano do filme: ');
-filmes[3].push(novoano) // Adicionando uma array à array de dentro (elemento 3)
+// let novoano = +prompt('Digite o ano do filme: ');
+// filmes[3].push(novoano) // Adicionando uma array à array de dentro (elemento 3)
 
-console.log(filmes);
+// console.log(filmes);
 
 
 // let filmes2 = [];
@@ -60,5 +60,40 @@ console.log(filmes);
 // }
 
 // console.log(filmes2);
+
+// EXERCICIOS:
+
+/*
+Faça um Programa que leia 20 números inteiros e armazene-os num array. 
+Armazene os números pares no array PAR e os números IMPARES no array IMPAR. 
+Imprima os três vetores.
+*/
+
+let lista = [];
+let pares = [];
+let impares = [];
+let numero = 0;
+
+while (lista.length < 20){
+    numero = +prompt('Digite um número: ');
+    // if (lista.includes(numero)) {
+    //     console.log('Repetido!!');
+    //     continue;
+    // }
+
+    lista.push(numero);
+
+    if (numero % 2 == 0){
+        pares.push(numero);
+    } else {
+        impares.push(numero);
+    }
+}
+
+console.log(lista);
+console.log('Pares: ');
+console.log(pares);
+console.log('Impares: ');
+console.log(impares);
 
 console.log();

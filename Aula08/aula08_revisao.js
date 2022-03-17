@@ -160,9 +160,3 @@ console.log(listaSplice);
 // }
 
 console.log();
-
-
-
-
-
-        ## RETORNO 21:22 ##

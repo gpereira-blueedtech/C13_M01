@@ -38,6 +38,9 @@ function validanumero(val){
         isnum = /^\d+$/.test(val);
         console.log(isnum)
     }
+
+    // Retorno o valor final depois de validado
+    return val;
 }
 
 
@@ -101,9 +104,54 @@ multiplicação e divisão desses valores.
 // calculadora(valor1, valor2);
 
 
+// // Testando a função de validação de número
+// let idade = prompt('Digite a sua idade: ');
+// validanumero(idade);
 
-let idade = prompt('Digite a sua idade: ');
-validanumero(idade);
+
+
+
+
+//          ### RETURN ###
+
+function calculatotal (quantidade, valor) {
+    let total = quantidade * valor;
+
+    return total;
+}
+
+// let qtd = +prompt('Digite a quantidade: ');
+// let val = +prompt('Digite o valor unitário: ');
+
+// calculatotal(12, 2.50, 'Cerveja');
+
+// Recebendo o valor do total da função e armazenando numa var
+// let totalPagar = calculatotal(qtd, val);
+// console.log(totalPagar);
+
+// Usando o return apenas para um console.log
+// console.log(calculatotal(qtd, val));
+
+
+
+
+
+// // Usando o for para pegar vários itens e adicionar o resultado em uma lista
+// let qtdItens = +prompt('Quantos itens você vai comprar? ');
+// let listafinal = [];
+
+// for (let i = 1; i <= qtdItens; i++) {
+//     console.log(`Item ${i}:`)
+//     let qtd = +prompt('Digite a quantidade: ');
+//     let val = +prompt('Digite o valor unitário: ');
+//     console.log();
+
+//     let totalPagar = calculatotal(qtd, val);
+//     listafinal.push(totalPagar);
+// }
+
+// console.log(listafinal);
+
 
 
 

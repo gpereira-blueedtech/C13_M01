@@ -4,17 +4,31 @@ const prompt = require('prompt-sync')();
 // function pizzaPronta() {
 //     console.log(`Sua pizza está pronta.`);
 // }
+
+// function pizzaDelivery() {
+//     console.log(`Sua pizza saiu para entrega.`);
+// }
   
 // // Exemplo de callback sem argumentos
+// // Essa função vai ser executada e ao final vai chamar a função que foi passada como argumento da primeira
 // function pedirPizza(callback) {
-//     // Essa var sabor nbão está sendo usada pra nada nesse exemplo (callback sem argumentos).
+//     // Essa var sabor não está sendo usada pra nada nesse exemplo (callback sem argumentos).
 //     const sabor = prompt('Escolha o sabor da sua pizza: ');
     
 //     // Nesse momento estou chamando a função (pizzaPronta) que veio como argumento dessa primeira
 //     callback();
 // }
   
-// pedirPizza(pizzaPronta);
+// let escolha = +prompt('Você deseja retirada(1) ou delivery(2)? ');
+
+// if (escolha == 1){
+//     // Nesse caso vai executar a função pedir pizza, e ao final ela vai chamar a pizzaPronta
+//     pedirPizza(pizzaPronta);
+// } else if (escolha == 2){
+//     // Nesse caso vai executar a função pedir pizza, e ao final ela vai chamar a pizzaDelivery
+//     pedirPizza(pizzaDelivery);
+// }
+
 
 
 
@@ -41,15 +55,22 @@ const prompt = require('prompt-sync')();
 
 
 
+/*
+          ## PROMISES ##
 
-//          ## PROMISES ##
+Uma função com promise, é uma função assíncrona, ou seja, ela não pode te devolver
+um resultado de imediato - Ela começa a execução mas não termina em tempo real,
+O meu programa vai continuar, e ela vai entregar o resultado depois.
+Por isso ela retorna uma PROMESSA, ou seja, ela "promete" que vai me entregar um resultado futuramente.
 
+*/
 
 // // Exemplo de uma função que apenas escreve e retorna o parâmetro passado.
 // function teste(parametro){
 //     console.log(parametro);
 //     return parametro;
 // }
+
 
 // // Podemos pensar a Promise como um return que não vai retornar 
 // // na hora da execução, e sim ao final dela.
@@ -105,9 +126,9 @@ const prompt = require('prompt-sync')();
 
 
 
-//          ## CATCH
+// //        ## CATCH
 
-// Para tratar de erros durante a execução de funções com Promises, usamos .catch
+// //Para tratar de erros durante a execução de funções com Promises, usamos .catch
 
 function alteraNome(parametro) {
     return new Promise((resolve, reject) => {
@@ -125,16 +146,22 @@ function escreveNome(parametro) {
     });
 }
 
+// // Como a execução do console.log é em tempo real, ao
+// // chamar a função ele ainda não tem o retorno, e sim a promise
+// // por isso ele irá exibir: Promise { 'GABRIEL' }.
+// console.log(alteraNome('gabriel'));
+
+
 // Essa função deve retornar erro porque estou passando um número como argumento
 // Então ele não consegue aplicar o método .toUpeerCase()
-alteraNome(15)
+alteraNome('julia')
     .then(escreveNome)
     .catch((err) => console.log('Alguma coisa deu errada no caminho...'));
+    
     // // No caso abaixo, ele apresentará a mensagem de erro também, 
     // //pois ela foi passada também no console.log.
     // .catch((err) => console.log('Alguma coisa deu errada no caminho...', err));
 
 
-
-
+console.log('Executa isso aqui');
 console.log();

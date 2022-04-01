@@ -24,18 +24,43 @@ const prompt = require('prompt-sync')();
 
 
 
-async function saudacao() {
-    const promise = new Promise(resolve => {
-      setTimeout(() => resolve('Olá!'), 3000);
-    });
 
-    // O await faz ele esperar a execução da promise antes de prosseguir.
-    const escrever = await promise;
-    console.log(escrever);
+
+
+
+// async function saudacao() {
+//     const promise = new Promise(resolve => {
+//       setTimeout(() => resolve('Olá!'), 3000);
+//     });
+
+//     // O await faz ele esperar a execução da promise antes de prosseguir.
+//     const escrever = await promise;
+//     console.log(escrever);
+// }
+
+// saudacao();
+
+// // Esse console log será executado antes porque a função é assíncrona.
+// // Como a função tem um await na promise, ela vai esperar a execução
+// // (3 segundos do timeout) para depois prosseguir, escrevendo 'Olá!'
+// console.log('Execute isso');
+
+
+
+
+
+
+let pessoa = {
+    nome: 'Arlyson',
+    idade: 20,
+    altura: 1.75,
+    envelhecer: function(){
+        this.idade++;
+    }
 }
 
-saudacao();
-// Esse console log será executado antes porque a função é assíncrona.
-// Como a função tem um await na promise, ela vai esperar a execução
-// (3 segundos do timeout) para depois prosseguir, escrevendo 'Olá!'
-console.log('Execute isso');
+// Percorrendo os valores de um objeto e mostrando apenas o que não é método.
+for (let i of Object.values(pessoa)){
+    if (typeof i !== "function")
+        console.log(i);
+}
